@@ -1,0 +1,17 @@
+# Normalise text files in the repository to LF.
+* text=auto
+
+# These must keep LF endings or they will not run on Linux
+# (a CRLF shebang gives "bad interpreter: /bin/bash^M").
+*.sh   text eol=lf
+*.py   text eol=lf
+*.yaml text eol=lf
+*.yml  text eol=lf
+
+# Never touch binary files
+*.pt   binary
+*.pth  binary
+*.npz  binary
+*.png  binary
+*.jpg  binary
+*.pdf  binary

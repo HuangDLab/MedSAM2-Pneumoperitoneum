@@ -1,0 +1,15 @@
+# Packages needed on top of an installed MedSAM2.
+#
+# MedSAM2 declares its own dependencies in setup.py (torch, torchvision, numpy,
+# tqdm, hydra-core, iopath, pillow, SimpleITK), so install it first and then:
+#
+#     pip install -r requirements.txt
+#
+# Pinning torch here would risk overwriting the build that MedSAM2 installed, so
+# this file lists only what MedSAM2 does not already pull in.
+
+peft>=0.11.0          # LoRA adapters (training/trainer.py, scripts/merge_lora_weights.py)
+scikit-image>=0.22.0  # connected components, region properties
+scipy>=1.11.0         # distance transform for the prompt point
+pandas>=2.0.0         # audit and results CSVs
+submitit>=1.5.0       # imported by training/train.py; not declared by MedSAM2
